@@ -5,6 +5,9 @@ ARG TZ
 ARG PHP_EXTENSIONS
 ARG CONTAINER_PACKAGE_URL
 
+# 1. development packages
+RUN apk --no-cache add git
+
 
 RUN sed -i "s/dl-cdn.alpinelinux.org/${CONTAINER_PACKAGE_URL}/g" /etc/apk/repositories
 
